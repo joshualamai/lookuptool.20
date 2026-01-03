@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - LookupProtocol</title>
+    <link rel="stylesheet" href="css.css">
+    <style>
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .feature-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            border-left: 4px solid var(--primary-color);
+        }
+        .feature-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .tech-badge {
+            background: var(--primary-color);
+            color: white;
+            padding: 8px 16px;
+            border-radius: var(--radius);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📖 About LookupProtocol</h1>
+            <p class="subtitle">Modern Product Lookup System</p>
+        </header>
+
+        <nav class="navbar">
+            <ul id="myMenu">
+                <li><a href="index.html">Search</a></li>
+                <li><a href="admin.html">Admin Panel</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="home.html" class="active">About</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <div class="about-content">
+                <h2>Welcome to LookupProtocol</h2>
+                <p>
+                    LookupProtocol is a modern, full-stack product lookup system designed to demonstrate 
+                    professional web development practices. This project showcases RESTful API design, 
+                    database integration, modern UI/UX, and comprehensive security features.
+                </p>
+
+                <h2>Key Features</h2>
+                <div class="feature-list">
+                    <div class="feature-card">
+                        <h3>🔍 Advanced Search</h3>
+                        <p>Search products by ID, name, description, or code with real-time filtering and sorting capabilities.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>⚙️ Admin Panel</h3>
+                        <p>Full CRUD interface for managing products with validation and error handling.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>📊 Analytics Dashboard</h3>
+                        <p>Real-time statistics and category breakdowns for inventory insights.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🔒 Security</h3>
+                        <p>Input validation, rate limiting, SQL injection prevention, and secure error handling.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>📱 Responsive Design</h3>
+                        <p>Beautiful, mobile-first UI that works seamlessly on all devices.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🐳 Docker Ready</h3>
+                        <p>Containerized deployment with Docker and Docker Compose for easy setup.</p>
+                    </div>
+                </div>
+
+                <h2>Technology Stack</h2>
+                <div class="tech-stack">
+                    <span class="tech-badge">Node.js</span>
+                    <span class="tech-badge">Express.js</span>
+                    <span class="tech-badge">SQLite3</span>
+                    <span class="tech-badge">JavaScript (ES6+)</span>
+                    <span class="tech-badge">HTML5</span>
+                    <span class="tech-badge">CSS3</span>
+                    <span class="tech-badge">Docker</span>
+                    <span class="tech-badge">REST API</span>
+                </div>
+
+                <h2>Project Highlights</h2>
+                <ul style="line-height: 2; color: var(--text-primary);">
+                    <li>✅ RESTful API with comprehensive CRUD operations</li>
+                    <li>✅ Database integration with proper schema design and indexes</li>
+                    <li>✅ Modern, responsive user interface with smooth animations</li>
+                    <li>✅ Admin panel for product management</li>
+                    <li>✅ Statistics dashboard with real-time analytics</li>
+                    <li>✅ Input validation and sanitization</li>
+                    <li>✅ Rate limiting for API protection</li>
+                    <li>✅ Docker containerization for easy deployment</li>
+                    <li>✅ Comprehensive error handling and user feedback</li>
+                    <li>✅ Professional documentation and code organization</li>
+                </ul>
+
+                <h2>Getting Started</h2>
+                <p>
+                    To get started with LookupProtocol, check out the README.md file for installation 
+                    instructions and API documentation. The project is designed to be easy to set up 
+                    and extend.
+                </p>
+
+                <div style="margin-top: 40px; padding: 20px; background: var(--bg-color); border-radius: var(--radius-lg);">
+                    <h3>🚀 Quick Start</h3>
+                    <pre style="background: var(--card-bg); padding: 15px; border-radius: var(--radius); overflow-x: auto;"><code>npm install
+npm run init-db
+npm run seed
+npm start</code></pre>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 LookupProtocol. Built with modern web technologies</p>
+        </footer>
+    </div>
+</body>
+</html>

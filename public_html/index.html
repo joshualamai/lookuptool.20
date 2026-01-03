@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LookupProtocol - Product Search</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔍 LookupProtocol</h1>
+            <p class="subtitle">Modern Product Lookup System</p>
+        </header>
+
+        <nav class="navbar">
+            <ul id="myMenu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="home.html">About</a></li>
+                <li><a href="#" onclick="showAllProducts()">Browse All</a></li>
+                <li><a href="admin.html">Admin Panel</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="#" onclick="exportToCSV()">Export CSV</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <div class="search-section">
+                <div class="search-container">
+                    <input 
+                        type="text" 
+                        id="mySearch" 
+                        placeholder="Search by ID, name, or description..." 
+                        title="Type in a product ID, name, or description"
+                        autocomplete="off"
+                    >
+                    <button type="button" onclick="searchProduct()" class="btn-primary">
+                        <span class="btn-text">Search</span>
+                        <span class="btn-loader" style="display: none;">⏳</span>
+                    </button>
+                </div>
+
+                <div class="filter-section">
+                    <select id="categoryFilter" onchange="applyFilters()">
+                        <option value="">All Categories</option>
+                    </select>
+                    <input type="number" id="minPrice" placeholder="Min Price" onchange="applyFilters()">
+                    <input type="number" id="maxPrice" placeholder="Max Price" onchange="applyFilters()">
+                    <select id="sortBy" onchange="applyFilters()">
+                        <option value="name">Sort by Name</option>
+                        <option value="unit_price">Sort by Price</option>
+                        <option value="quantity">Sort by Quantity</option>
+                        <option value="category">Sort by Category</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="loadingIndicator" class="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Loading products...</p>
+            </div>
+
+            <div id="errorMessage" class="error-message" style="display: none;"></div>
+
+            <div id="searchHistory" style="margin-top: 20px;"></div>
+            <div id="productResults" class="product-results"></div>
+
+            <div id="productDetails" class="product-details" style="display: none;">
+                <div class="product-card">
+                    <button class="close-btn" onclick="closeProductDetails()">&times;</button>
+                    <h2 id="prd-name"></h2>
+                    <div class="product-info">
+                        <div class="info-row">
+                            <span class="label">Category:</span>
+                            <span id="prd-category"></span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">Code:</span>
+                            <span id="prd-code"></span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">Description:</span>
+                            <p id="prd-desc"></p>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">Quantity:</span>
+                            <span id="prd-qty" class="quantity-badge"></span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">Unit Price:</span>
+                            <span id="prd-price" class="price"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 LookupProtocol. Built with Express.js & SQLite</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

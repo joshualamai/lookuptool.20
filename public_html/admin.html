@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - LookupProtocol</title>
+    <link rel="stylesheet" href="css.css">
+    <style>
+        .admin-container {
+            max-width: 1400px;
+        }
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        .btn-secondary {
+            background: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: var(--radius);
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-secondary:hover {
+            background: #475569;
+            transform: translateY(-2px);
+        }
+        .btn-danger {
+            background: var(--danger-color);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: var(--radius);
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        .btn-danger:hover {
+            background: #dc2626;
+        }
+        .btn-success {
+            background: var(--success-color);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: var(--radius);
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        .btn-success:hover {
+            background: #059669;
+        }
+        .form-section {
+            background: var(--card-bg);
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow-md);
+        }
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-group label {
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            padding: 12px;
+            border: 2px solid var(--border-color);
+            border-radius: var(--radius);
+            font-size: 14px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        .form-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .products-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card-bg);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+        .products-table th {
+            background: var(--primary-color);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        .products-table td {
+            padding: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .products-table tr:hover {
+            background: var(--bg-color);
+        }
+        .products-table tr:last-child td {
+            border-bottom: none;
+        }
+        .action-buttons {
+            display: flex;
+            gap: 8px;
+        }
+        .success-message {
+            background: #d1fae5;
+            color: var(--success-color);
+            padding: 15px 20px;
+            border-radius: var(--radius);
+            margin-bottom: 20px;
+            border-left: 4px solid var(--success-color);
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="container admin-container">
+        <header>
+            <h1>⚙️ Admin Panel</h1>
+            <p class="subtitle">Manage Products</p>
+        </header>
+
+        <nav class="navbar">
+            <ul id="myMenu">
+                <li><a href="index.html">Back to Search</a></li>
+                <li><a href="admin.html" class="active">Admin Panel</a></li>
+            </ul>
+        </nav>
+
+        <div id="successMessage" class="success-message" style="display: none;"></div>
+        <div id="errorMessage" class="error-message" style="display: none;"></div>
+
+        <div class="form-section">
+            <h2 id="formTitle">Add New Product</h2>
+            <form id="productForm" onsubmit="handleSubmit(event)">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="productId">Product ID *</label>
+                        <input type="text" id="productId" name="id" pattern="^\d{3}-\d{2}$" 
+                               placeholder="000-01" required>
+                        <small>Format: XXX-XX</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="productCode">Code *</label>
+                        <input type="text" id="productCode" name="code" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productName">Name *</label>
+                        <input type="text" id="productName" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productCategory">Category *</label>
+                        <input type="text" id="productCategory" name="category" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productQuantity">Quantity *</label>
+                        <input type="number" id="productQuantity" name="quantity" min="0" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productPrice">Unit Price (€) *</label>
+                        <input type="number" id="productPrice" name="unit_price" min="0" step="0.01" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="productDescription">Description</label>
+                    <textarea id="productDescription" name="description" rows="4"></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary" id="submitBtn">Add Product</button>
+                    <button type="button" class="btn-secondary" onclick="resetForm()">Reset</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="form-section">
+            <div class="admin-header">
+                <h2>All Products</h2>
+                <button class="btn-secondary" onclick="loadAllProducts()">Refresh</button>
+            </div>
+            <div id="loadingIndicator" class="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Loading products...</p>
+            </div>
+            <div id="productsTableContainer"></div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = '/api';
+        let editingProductId = null;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadAllProducts();
+        });
+
+        async function loadAllProducts() {
+            showLoading(true);
+            hideMessages();
+            
+            try {
+                const response = await fetch(`${API_BASE}/products`);
+                if (!response.ok) throw new Error('Failed to load products');
+                
+                const products = await response.json();
+                displayProductsTable(products);
+            } catch (error) {
+                showError('Failed to load products');
+                console.error('Error:', error);
+            } finally {
+                showLoading(false);
+            }
+        }
+
+        function displayProductsTable(products) {
+            const container = document.getElementById('productsTableContainer');
+            
+            if (products.length === 0) {
+                container.innerHTML = '<p class="no-results">No products found</p>';
+                return;
+            }
+
+            container.innerHTML = `
+                <table class="products-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${products.map(product => `
+                            <tr>
+                                <td>${escapeHtml(product.id)}</td>
+                                <td>${escapeHtml(product.name)}</td>
+                                <td>${escapeHtml(product.category)}</td>
+                                <td>€${product.unit_price.toFixed(2)}</td>
+                                <td>${product.quantity}</td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="btn-success" onclick="editProduct(${JSON.stringify(product).replace(/"/g, '&quot;')})">Edit</button>
+                                        <button class="btn-danger" onclick="deleteProduct('${product.id}')">Delete</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+            `;
+        }
+
+        function editProduct(product) {
+            editingProductId = product.id;
+            document.getElementById('formTitle').textContent = 'Edit Product';
+            document.getElementById('submitBtn').textContent = 'Update Product';
+            document.getElementById('productId').value = product.id;
+            document.getElementById('productId').disabled = true;
+            document.getElementById('productCode').value = product.code;
+            document.getElementById('productName').value = product.name;
+            document.getElementById('productCategory').value = product.category;
+            document.getElementById('productQuantity').value = product.quantity;
+            document.getElementById('productPrice').value = product.unit_price;
+            document.getElementById('productDescription').value = product.description || '';
+            
+            document.getElementById('productForm').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        async function deleteProduct(id) {
+            if (!confirm(`Are you sure you want to delete product ${id}?`)) {
+                return;
+            }
+
+            try {
+                const response = await fetch(`${API_BASE}/products/${id}`, {
+                    method: 'DELETE'
+                });
+
+                if (!response.ok) {
+                    const error = await response.json();
+                    throw new Error(error.error || 'Failed to delete product');
+                }
+
+                showSuccess('Product deleted successfully');
+                loadAllProducts();
+            } catch (error) {
+                showError(error.message || 'Failed to delete product');
+                console.error('Error:', error);
+            }
+        }
+
+        async function handleSubmit(event) {
+            event.preventDefault();
+            hideMessages();
+
+            const formData = new FormData(event.target);
+            const product = {
+                id: formData.get('id'),
+                code: formData.get('code'),
+                name: formData.get('name'),
+                category: formData.get('category'),
+                quantity: parseInt(formData.get('quantity')),
+                unit_price: parseFloat(formData.get('unit_price')),
+                description: formData.get('description') || ''
+            };
+
+            try {
+                const url = editingProductId 
+                    ? `${API_BASE}/products/${editingProductId}`
+                    : `${API_BASE}/products`;
+                
+                const method = editingProductId ? 'PUT' : 'POST';
+
+                const response = await fetch(url, {
+                    method: method,
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(product)
+                });
+
+                if (!response.ok) {
+                    const error = await response.json();
+                    throw new Error(error.error || error.errors?.[0]?.msg || 'Operation failed');
+                }
+
+                showSuccess(editingProductId ? 'Product updated successfully' : 'Product created successfully');
+                resetForm();
+                loadAllProducts();
+            } catch (error) {
+                showError(error.message || 'Operation failed');
+                console.error('Error:', error);
+            }
+        }
+
+        function resetForm() {
+            document.getElementById('productForm').reset();
+            document.getElementById('productId').disabled = false;
+            editingProductId = null;
+            document.getElementById('formTitle').textContent = 'Add New Product';
+            document.getElementById('submitBtn').textContent = 'Add Product';
+        }
+
+        function showLoading(show) {
+            document.getElementById('loadingIndicator').style.display = show ? 'flex' : 'none';
+        }
+
+        function showSuccess(message) {
+            const successDiv = document.getElementById('successMessage');
+            successDiv.textContent = message;
+            successDiv.style.display = 'block';
+            setTimeout(() => hideMessages(), 5000);
+        }
+
+        function showError(message) {
+            const errorDiv = document.getElementById('errorMessage');
+            errorDiv.textContent = message;
+            errorDiv.style.display = 'block';
+        }
+
+        function hideMessages() {
+            document.getElementById('successMessage').style.display = 'none';
+            document.getElementById('errorMessage').style.display = 'none';
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+    </script>
+</body>
+</html>
+

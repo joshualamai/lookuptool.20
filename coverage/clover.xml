@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1767440159158" clover="3.2.0">
+  <project timestamp="1767440159158" name="All files">
+    <metrics statements="183" coveredstatements="118" conditionals="83" coveredconditionals="45" methods="33" coveredmethods="21" elements="299" coveredelements="184" complexity="0" loc="183" ncloc="183" packages="2" files="3" classes="3"/>
+    <package name="LookupProtocol">
+      <metrics statements="168" coveredstatements="103" conditionals="77" coveredconditionals="41" methods="33" coveredmethods="21"/>
+      <file name="server.js" path="C:\Users\joshu\Documents\NetBeansProjects\LookupProtocol\server.js">
+        <metrics statements="168" coveredstatements="103" conditionals="77" coveredconditionals="41" methods="33" coveredmethods="21"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="14" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
+        <line num="41" count="10" type="stmt"/>
+        <line num="42" count="10" type="stmt"/>
+        <line num="46" count="1" type="stmt"/>
+        <line num="56" count="1" type="stmt"/>
+        <line num="61" count="1" type="stmt"/>
+        <line num="62" count="4" type="stmt"/>
+        <line num="63" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="64" count="1" type="stmt"/>
+        <line num="66" count="3" type="stmt"/>
+        <line num="70" count="1" type="stmt"/>
+        <line num="71" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="72" count="0" type="stmt"/>
+        <line num="74" count="1" type="stmt"/>
+        <line num="155" count="1" type="stmt"/>
+        <line num="156" count="3" type="cond" truecount="4" falsecount="0"/>
+        <line num="158" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="159" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="160" count="3" type="stmt"/>
+        <line num="162" count="3" type="stmt"/>
+        <line num="163" count="3" type="stmt"/>
+        <line num="164" count="3" type="stmt"/>
+        <line num="166" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="167" count="1" type="stmt"/>
+        <line num="168" count="1" type="stmt"/>
+        <line num="169" count="1" type="stmt"/>
+        <line num="172" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="173" count="1" type="stmt"/>
+        <line num="174" count="1" type="stmt"/>
+        <line num="175" count="1" type="stmt"/>
+        <line num="176" count="1" type="stmt"/>
+        <line num="179" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="180" count="0" type="stmt"/>
+        <line num="181" count="0" type="stmt"/>
+        <line num="182" count="0" type="stmt"/>
+        <line num="185" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="186" count="0" type="stmt"/>
+        <line num="187" count="0" type="stmt"/>
+        <line num="188" count="0" type="stmt"/>
+        <line num="192" count="3" type="stmt"/>
+        <line num="193" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="194" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="196" count="3" type="stmt"/>
+        <line num="199" count="3" type="stmt"/>
+        <line num="200" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="201" count="0" type="stmt"/>
+        <line num="202" count="0" type="stmt"/>
+        <line num="205" count="3" type="stmt"/>
+        <line num="206" count="3" type="stmt"/>
+        <line num="209" count="3" type="stmt"/>
+        <line num="210" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="211" count="0" type="stmt"/>
+        <line num="212" count="0" type="stmt"/>
+        <line num="215" count="3" type="stmt"/>
+        <line num="251" count="1" type="stmt"/>
+        <line num="252" count="2" type="stmt"/>
+        <line num="254" count="2" type="stmt"/>
+        <line num="255" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="256" count="0" type="stmt"/>
+        <line num="257" count="0" type="stmt"/>
+        <line num="260" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="261" count="1" type="stmt"/>
+        <line num="264" count="1" type="stmt"/>
+        <line num="269" count="1" type="stmt"/>
+        <line num="270" count="0" type="stmt"/>
+        <line num="272" count="0" type="stmt"/>
+        <line num="273" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="274" count="0" type="stmt"/>
+        <line num="275" count="0" type="stmt"/>
+        <line num="277" count="0" type="stmt"/>
+        <line num="282" count="1" type="stmt"/>
+        <line num="283" count="1" type="stmt"/>
+        <line num="284" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="285" count="0" type="stmt"/>
+        <line num="286" count="0" type="stmt"/>
+        <line num="288" count="2" type="stmt"/>
+        <line num="310" count="1" type="stmt"/>
+        <line num="311" count="1" type="stmt"/>
+        <line num="313" count="1" type="cond" truecount="8" falsecount="1"/>
+        <line num="314" count="0" type="stmt"/>
+        <line num="317" count="1" type="stmt"/>
+        <line num="321" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="322" count="0" type="stmt"/>
+        <line num="323" count="0" type="stmt"/>
+        <line num="325" count="1" type="stmt"/>
+        <line num="326" count="1" type="stmt"/>
+        <line num="355" count="1" type="stmt"/>
+        <line num="356" count="0" type="stmt"/>
+        <line num="357" count="0" type="stmt"/>
+        <line num="359" count="0" type="stmt"/>
+        <line num="363" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="364" count="0" type="stmt"/>
+        <line num="365" count="0" type="stmt"/>
+        <line num="368" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="369" count="0" type="stmt"/>
+        <line num="372" count="0" type="stmt"/>
+        <line num="373" count="0" type="stmt"/>
+        <line num="396" count="1" type="stmt"/>
+        <line num="397" count="0" type="stmt"/>
+        <line num="399" count="0" type="stmt"/>
+        <line num="400" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="401" count="0" type="stmt"/>
+        <line num="402" count="0" type="stmt"/>
+        <line num="405" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="406" count="0" type="stmt"/>
+        <line num="409" count="0" type="stmt"/>
+        <line num="410" count="0" type="stmt"/>
+        <line num="415" count="1" type="stmt"/>
+        <line num="416" count="1" type="stmt"/>
+        <line num="425" count="1" type="stmt"/>
+        <line num="426" count="6" type="stmt"/>
+        <line num="427" count="6" type="stmt"/>
+        <line num="428" count="6" type="cond" truecount="1" falsecount="1"/>
+        <line num="429" count="6" type="stmt"/>
+        <line num="434" count="1" type="stmt"/>
+        <line num="435" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="436" count="0" type="stmt"/>
+        <line num="437" count="0" type="stmt"/>
+        <line num="440" count="1" type="stmt"/>
+        <line num="452" count="0" type="stmt"/>
+        <line num="453" count="0" type="stmt"/>
+        <line num="458" count="1" type="stmt"/>
+        <line num="459" count="0" type="stmt"/>
+        <line num="460" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="461" count="0" type="stmt"/>
+        <line num="462" count="0" type="stmt"/>
+        <line num="466" count="0" type="stmt"/>
+        <line num="467" count="0" type="stmt"/>
+        <line num="469" count="0" type="stmt"/>
+        <line num="470" count="0" type="stmt"/>
+        <line num="479" count="0" type="stmt"/>
+        <line num="482" count="0" type="stmt"/>
+        <line num="484" count="0" type="stmt"/>
+        <line num="485" count="0" type="stmt"/>
+        <line num="486" count="0" type="stmt"/>
+        <line num="491" count="1" type="stmt"/>
+        <line num="492" count="1" type="stmt"/>
+        <line num="496" count="1" type="stmt"/>
+        <line num="497" count="1" type="stmt"/>
+        <line num="498" count="1" type="stmt"/>
+        <line num="502" count="1" type="stmt"/>
+        <line num="503" count="0" type="stmt"/>
+        <line num="504" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="505" count="0" type="stmt"/>
+        <line num="507" count="0" type="stmt"/>
+        <line num="509" count="0" type="stmt"/>
+        <line num="513" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="LookupProtocol.config">
+      <metrics statements="15" coveredstatements="15" conditionals="6" coveredconditionals="4" methods="0" coveredmethods="0"/>
+      <file name="logger.js" path="C:\Users\joshu\Documents\NetBeansProjects\LookupProtocol\config\logger.js">
+        <metrics statements="11" coveredstatements="11" conditionals="6" coveredconditionals="4" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="45" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="46" count="1" type="stmt"/>
+        <line num="51" count="1" type="stmt"/>
+      </file>
+      <file name="swagger.js" path="C:\Users\joshu\Documents\NetBeansProjects\LookupProtocol\config\swagger.js">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="86" count="1" type="stmt"/>
+        <line num="88" count="1" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
